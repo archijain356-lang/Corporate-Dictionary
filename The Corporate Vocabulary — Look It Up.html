@@ -1,0 +1,185 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>The Corporate Vocabulary — Look It Up.</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter+Tight:wght@500;800&display=swap" rel="stylesheet">
+<style>
+:root{--r:#E60000;--f:'Archivo Black',Impact,'Arial Black',sans-serif;--t:'Inter Tight',Helvetica,Arial,sans-serif}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
+body{background:#000;color:#fff;font:500 1.05rem/1.4 var(--t)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+:focus-visible{outline:4px solid var(--r);outline-offset:-4px}
+.dk :focus-visible,#grid :focus-visible{outline-color:#fff}
+h1,h2,h3{font:400 clamp(2.4rem,8vw,7.5rem)/.95 var(--f);text-transform:uppercase}
+.k{font:800 12px var(--t);letter-spacing:.25em;text-transform:uppercase}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;padding:18px 4vw;mix-blend-mode:difference;color:#fff;font:800 12px var(--t);letter-spacing:.22em}
+nav a{color:inherit;text-decoration:none;margin-left:22px}nav a:first-child{margin:0}nav div a:hover{text-decoration:underline}
+@media(max-width:600px){nav .l{display:none}nav .s{display:inline}}@media(min-width:601px){nav .s{display:none}}
+.b{font:800 15px var(--t);letter-spacing:.14em;text-transform:uppercase;border:3px solid currentColor;background:transparent;color:inherit;padding:16px 26px;cursor:pointer;text-decoration:none;display:inline-block;transition:.2s}
+.b:hover{background:#000;color:#fff;border-color:#000}.dk .b:hover{background:#fff;color:#000;border-color:#fff}
+/* stage */
+#stage{height:100vh;height:100svh;position:relative;overflow:hidden;background:#000}
+#grid{position:relative;width:100%;height:100%;display:grid;grid-template:repeat(3,1fr)/repeat(3,1fr);gap:2px;background:#fff}
+@media(max-width:700px){#grid{grid-template:repeat(5,1fr)/repeat(2,1fr)}#grid>:last-child{grid-column:span 2}}
+.tile,#ct{container-type:inline-size;position:relative;overflow:hidden;background:#000;color:#fff;border:0;text-align:left;font:inherit;padding:6cqw;display:flex;flex-direction:column;justify-content:space-between}
+.tile{cursor:pointer;transition:background .25s,color .25s}
+.tile:hover,.tile:focus-visible{background:#fff;color:#000}.tile:hover .w,.tile:focus-visible .w{color:var(--r)}
+.tile small{font:800 max(10px,3.4cqw) var(--t);letter-spacing:.2em}
+.tile .w{font:400 clamp(.9rem,8.5cqw,5rem)/1 var(--f);text-transform:uppercase;white-space:nowrap}
+@media(max-width:700px){.tile .w{font-size:10cqw}}
+#ct{z-index:2;will-change:transform;justify-content:center;padding:4cqw}
+#ct h1{font-size:12cqw;line-height:.92}#ct h1 span{color:var(--r)}
+#hint{position:absolute;bottom:22px;left:0;right:0;text-align:center;z-index:3;color:var(--r);pointer-events:none}
+.st #stage{height:auto}.st #grid{min-height:100vh}.st #hint{display:none}
+/* sections */
+section{padding:12vh 5vw;min-height:100vh;display:flex;flex-direction:column;justify-content:center;gap:34px}
+#dict{background:#fff;color:#000}
+.dg{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:6vw}@media(max-width:800px){.dg{grid-template-columns:1fr}}
+.lst button{display:block;width:100%;text-align:left;background:none;border:0;border-top:2px solid #000;padding:14px 0;font:400 clamp(1.2rem,2.6vw,2.2rem)/1.05 var(--f);text-transform:uppercase;cursor:pointer;color:#000}
+.lst button[aria-pressed=true]{color:var(--r)}.lst button:hover{padding-left:12px}.lst button{transition:padding .2s}
+.dt h3{font-size:clamp(2rem,5vw,4.4rem);white-space:nowrap}.dt .two>div{margin-bottom:26px}
+.dt h3.r{color:var(--r)}.dt p{margin-top:12px;font-weight:800;max-width:36ch}.dt .k{margin-top:30px;color:var(--r)}.dt .q{font:400 clamp(1.3rem,2.6vw,2.2rem)/1.1 var(--f);text-transform:uppercase;max-width:20ch}
+#add{background:var(--r);color:#fff}#add .k,#add small{color:#000}
+.fl{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:start}@media(max-width:800px){.fl{grid-template-columns:1fr}}
+label{display:block;font:800 12px var(--t);letter-spacing:.25em;margin:16px 0 6px;color:#000}
+.i{width:100%;font:800 1.1rem var(--t);padding:14px;border:3px solid #000;background:#fff;color:#000;border-radius:0}textarea.i{height:110px;resize:vertical}
+#sub{background:#000;color:#fff;border-color:#000;margin-top:20px}#sub:hover{background:#fff;color:#000}
+#er{font-weight:800;color:#000;margin-top:12px;min-height:1.4em}.hid{position:absolute;left:-9999px}
+#pv{container-type:inline-size;background:#000;color:#fff;padding:7cqw;aspect-ratio:1/1;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+#pv .a{font:400 13cqw/.95 var(--f);text-transform:uppercase;overflow-wrap:anywhere}#pv .a.r{color:var(--r)}#pv .s{font:800 4.2cqw/1.3 var(--t);overflow:hidden;max-height:30cqw}
+#com{background:#000}.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:2px;background:#fff;border:2px solid #fff}
+.cg .tile{aspect-ratio:4/3}
+#end{background:#fff;color:#000;align-items:flex-start}#end h2{font-size:clamp(2.6rem,10vw,10rem)}#end h2 span{color:var(--r)}#end .b:hover{background:#000;color:#fff}
+.row{display:flex;gap:14px;flex-wrap:wrap}
+.tw{display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:end}@media(max-width:800px){.tw{grid-template-columns:1fr}}
+#tt{height:68vh;display:flex;flex-direction:column-reverse;gap:3px;max-width:520px;width:100%;margin-left:auto;border-bottom:6px solid #fff;container-type:inline-size}
+.blk{flex:0 0 auto;height:clamp(40px,7.6vh,76px);overflow:hidden;background:#fff;color:#000;border:0;font:400 9cqw/1 var(--f);text-transform:uppercase;text-align:left;padding:0 4cqw;cursor:pointer;transition:height .35s,opacity .35s,background .2s,color .2s}
+.blk:nth-child(3n){background:var(--r);color:#fff}.blk:hover,.blk:focus-visible{background:#000;color:#fff;outline:3px solid #fff;outline-offset:-3px}.blk.gone{height:0;opacity:0}
+@media(prefers-reduced-motion:no-preference){.blk.n{animation:drop .45s cubic-bezier(.3,1.3,.5,1)}}@keyframes drop{from{transform:translateY(-60vh);opacity:0}}
+#rw{border-bottom:2px solid #fff}.rr{position:relative;display:flex;align-items:center;min-height:15vh;border-top:2px solid #fff;cursor:pointer;overflow:hidden}
+.rl{font:400 8.6vw/1 var(--f);text-transform:uppercase;white-space:nowrap;transition:clip-path .5s,opacity .5s,transform .5s}
+.rr.on .rl{clip-path:inset(0 100% 0 0);opacity:0;transform:translateX(-5%)}
+.rt{position:absolute;right:0;top:50%;transform:translate(30px,-50%);opacity:0;transition:.5s;font:800 clamp(12px,1.5vw,16px) var(--t);letter-spacing:.35em;color:var(--r)}.rr.on .rt{opacity:1;transform:translate(0,-50%)}
+#dsec{background:#fff;color:#000}#dc{display:block;width:100%;aspect-ratio:22/9}#dm{font:400 clamp(1.6rem,4.5vw,4rem)/1 var(--f);text-transform:uppercase;color:var(--r);min-height:2em}
+#pp{display:flex;align-items:flex-end;gap:2.4vw;margin:20px 0}.fg{width:10vw;min-width:34px;display:flex;flex-direction:column;align-items:center;gap:6px;transition:transform .6s}
+.fg i{display:block;background:#fff;transition:background .5s}.fg .hd{width:58%;aspect-ratio:1;border-radius:50%}.fg .bd{width:100%;aspect-ratio:1/.95;border-radius:50% 50% 0 0/80% 80% 0 0}
+.fg.sp{cursor:pointer;transform:scale(1.3);transform-origin:bottom center}.fg.sp i{background:var(--r)}.fg.sp.eq{transform:none}.fg.sp.eq i{background:#fff}
+.tg{background:var(--r);color:#fff;font:800 10px var(--t);letter-spacing:.2em;padding:4px 7px;margin-bottom:6px;transition:opacity .4s,transform .4s}.eq .tg{opacity:0;transform:translateY(-8px)}
+#pnl{position:fixed;inset:0;z-index:80;background:#fff;color:#000;padding:90px 5vw 6vw;overflow:auto;opacity:0;visibility:hidden;transform:translateY(24px);transition:.35s}
+#pnl.o{opacity:1;visibility:visible;transform:none}
+#px{position:fixed;top:14px;right:4vw;background:#000;color:#fff;border-color:#000;z-index:81;padding:10px 18px}
+#pnl .big{font-size:clamp(2.6rem,10vw,9rem);white-space:nowrap}#pnl .big.r{color:var(--r)}
+</style></head><body>
+<nav><a href="#top"><span class="l">THE CORPORATE VOCABULARY</span><span class="s">TCV</span></a><div><a href="#dict">WORDS</a><a href="#add">ADD</a><a href="#com">ARCHIVE</a></div></nav>
+<div id="pnl" role="dialog" aria-modal="true" aria-label="Details"><button class="b" id="px">CLOSE ✕</button><div id="pc"></div></div>
+
+<div id="stage"><div id="grid"></div><p id="hint" class="k">SCROLL ↓</p></div>
+
+<section id="dict"><p class="k">THE DICTIONARY</p>
+<div class="dg"><div class="lst" id="lst" role="group" aria-label="Word pairs"></div><div class="dt" id="dt" aria-live="polite"></div></div></section>
+
+<section id="rows"><p class="k">THE SAME BEHAVIOUR</p><h2 style="font-size:clamp(1.6rem,4vw,3.4rem)">MOVE ACROSS THE LABEL.</h2><div id="rw"></div></section>
+
+<section id="dsec"><p class="k">LOOK CLOSELY</p><h2>FIND THE ONE THAT’S DIFFERENT.</h2><canvas id="dc" role="img" aria-label="A field of black dots with one red dot. Move across it, then click the red dot or press Look closer."></canvas><div class="row"><button class="b" id="lc">LOOK CLOSER</button></div><h2 id="dm" aria-live="polite"></h2></section>
+
+<section id="ppl"><p class="k">ONE LABEL</p><h2>SETS SOMEONE APART.</h2><div id="pp"><div class="fg sp" id="sp" role="button" tabindex="0" aria-label="Remove the label Bossy"><span class="tg">BOSSY</span><i class="hd"></i><i class="bd"></i></div><div class="fg"><i class="hd"></i><i class="bd"></i></div><div class="fg"><i class="hd"></i><i class="bd"></i></div><div class="fg"><i class="hd"></i><i class="bd"></i></div><div class="fg"><i class="hd"></i><i class="bd"></i></div><div class="fg"><i class="hd"></i><i class="bd"></i></div><div class="fg"><i class="hd"></i><i class="bd"></i></div></div><p class="k" id="pcap" aria-live="polite" style="color:var(--r)">CLICK THE RED ONE.</p></section>
+
+<section id="add"><h2>THE DICTIONARY ISN’T COMPLETE.<br>ADD YOUR WORD.</h2>
+<div class="fl"><form id="fm" novalidate><label for="f1">WORD 01</label><input class="i" id="f1" maxlength="24" autocomplete="off">
+<label for="f2">WORD 02</label><input class="i" id="f2" maxlength="24" autocomplete="off">
+<label for="f3">THE SITUATION</label><textarea class="i" id="f3" maxlength="240"></textarea>
+<input class="hid" id="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<button class="b" id="sub" type="submit">ADD TO THE VOCABULARY →</button><p id="er" role="alert"></p>
+<p class="k" style="text-transform:none;letter-spacing:0;font-weight:500;max-width:48ch;margin-top:10px">Only these three fields are saved — no name or email. Entries are held as pending and are not shown publicly. In this demo they are stored in your own browser only; a live site needs a database with a moderation step.</p></form>
+<div id="pv" aria-label="Live preview"><div><div class="a" id="p1">WORD 01.</div><div class="a r" id="p2">WORD 02.</div></div><p class="s" id="p3">YOUR SITUATION APPEARS HERE.</p></div></div></section>
+
+<section id="com"><p class="k">WORDS PEOPLE HAVE ADDED</p><div class="cg" id="cg"></div>
+<p class="k">WHITE TILES MARKED SAMPLE ARE ILLUSTRATIVE, NOT REAL SUBMISSIONS. YOUR OWN PENDING ENTRIES APPEAR HERE ONLY FOR YOU.</p></section>
+
+<section id="end"><h2>BEFORE YOU<br>LABEL SOMEONE,<br><span>LOOK IT UP.</span></h2><div class="row"><a class="b" href="#dict">EXPLORE WORDS</a><a class="b" href="#add">ADD YOUR WORD</a></div></section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const mk=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
+const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const P=[
+["ASSERTIVE","AGGRESSIVE","Stating a view or need directly and clearly.","Pushing a view in a way that feels hostile.","A manager says plainly that a deadline can’t move.","Would you hear the same tone the same way from everyone?"],
+["CONFIDENT","BOSSY","Trusting your own judgement and showing it.","Telling others what to do without being asked.","Someone takes charge of a stalled team discussion.","What did they actually do, beyond how they sounded?"],
+["DECISIVE","CONTROLLING","Making a call quickly and standing by it.","Insisting on deciding everything.","A lead picks a vendor without a long debate.","Was anyone’s input actually shut out?"],
+["AMBITIOUS","SELF-CENTERED","Wanting to grow and reach higher goals.","Putting your own gain ahead of the team.","A colleague asks for a bigger role.","What would you call it if the ask also helped the team?"],
+["INDEPENDENT","DIFFICULT","Working from your own judgement and boundaries.","Hard to work with or manage.","Someone declines an extra task.","What do you know about their agreed responsibilities?"],
+["PERSISTENT","PUSHY","Following up until something gets resolved.","Pressing others past what feels comfortable.","Someone chases an overdue reply for the third time.","Was the follow-up reasonable given the deadline?"],
+["PASSIONATE","EMOTIONAL","Showing real investment in the work.","Letting feelings take over the discussion.","A colleague speaks firmly about a failing launch.","Is it the feeling that bothers you, or the message?"],
+["DETAIL-ORIENTED","NITPICKY","Catching small errors that matter.","Fixating on small things that don’t.","Someone catches a typo in a contract.","Did the small thing turn out to matter?"]];
+/* shared detail */
+function detail(p){const f=document.createDocumentFragment();const two=mk('div','two');
+[[0,2,''],[1,3,'r']].forEach(([a,d,c])=>{const x=mk('div');x.append(mk('h3',c,p[a]),mk('p','',p[d]));two.append(x)});
+f.append(two,mk('p','k','IN THE WORKPLACE'),mk('p','',p[4]),mk('p','k','ASK YOURSELF'),mk('p','q',p[5]));return f}
+/* panel */
+const pnl=$('#pnl');let opener=null;
+function openP(nodes){opener=document.activeElement;$('#pc').replaceChildren(...nodes);pnl.classList.add('o');fitH($('#pc'));document.body.style.overflow='hidden';$('#px').focus()}
+function closeP(){pnl.classList.remove('o');document.body.style.overflow='';opener&&opener.focus()}
+$('#px').onclick=closeP;addEventListener('keydown',e=>{if(e.key==='Escape'&&pnl.classList.contains('o'))closeP()});
+/* grid */
+const grid=$('#grid');
+[...P.slice(0,4),null,...P.slice(4)].forEach((p,i)=>{
+ if(!p){const c=mk('div');c.id='ct';const h=mk('h1');h.append('SAME',document.createElement('br'),'BEHAVIOUR.',document.createElement('br'));const s=mk('span');s.append('DIFFERENT',document.createElement('br'),'MEANING.');h.append(s);c.append(h);grid.append(c);return}
+ const n=i<4?i:i-1,b=mk('div','tile');b.tabIndex=0;b.setAttribute('role','button');b.dataset.t=p[0]+'|'+p[1];b.setAttribute('aria-label',p[0]+' or '+p[1]+'. Open definition.');
+ const w=mk('span','w',p[0]);b.append(mk('small','','0'+(n+1)),w);
+ const sw=k=>()=>w.textContent=p[k];b.onpointerenter=sw(1);b.onpointerleave=sw(0);b.onfocus=sw(1);b.onblur=sw(0);
+ b.onclick=()=>{w.textContent=p[0];const x=mk('p','k','WORD PAIR 0'+(n+1));x.style.color='#E60000';openP([x,Object.assign(mk('h2','big',p[0])),(()=>{const h=mk('h2','big r',p[1]);return h})(),(()=>{const d=mk('div','dt');d.append(detail(p));d.style.marginTop='30px';return d})()])};
+ grid.append(b)});
+const ct=$('#ct'),tiles=$$('.tile');
+if(!RM&&window.gsap&&window.ScrollTrigger){gsap.registerPlugin(ScrollTrigger);tiles.forEach(t=>t.inert=true);
+ const st=$('#stage');
+ const tl=gsap.timeline({defaults:{ease:'power2.inOut'},scrollTrigger:{trigger:st,start:'top top',end:'+=220%',pin:true,scrub:1,invalidateOnRefresh:true,onUpdate:s=>tiles.forEach(t=>t.inert=s.progress<.9)}});
+ tl.fromTo(ct,{x:()=>st.clientWidth/2-(ct.offsetLeft+ct.offsetWidth/2),y:()=>st.clientHeight/2-(ct.offsetTop+ct.offsetHeight/2),scale:()=>Math.max(st.clientWidth/ct.offsetWidth,st.clientHeight/ct.offsetHeight)*1.02},{x:0,y:0,scale:1,duration:1},0)
+  .fromTo(tiles,{opacity:0},{opacity:1,duration:.45,ease:'none',stagger:{each:.07,from:'center'}},.55).to('#hint',{opacity:0,duration:.1,ease:'none'},0)}
+else document.body.classList.add('st');
+/* dictionary */
+const lst=$('#lst');let sel=0;
+function show(i){sel=i;$$('#lst button').forEach((b,k)=>b.setAttribute('aria-pressed',k===i));$('#dt').replaceChildren(detail(P[i]));fitH($('#dt'))}
+P.forEach((p,i)=>{const b=mk('button','',p[0]+' / '+p[1]);b.onclick=()=>show(i);lst.append(b)});show(0);
+/* creator */
+const clean=s=>s.replace(/[<>`{}\\]/g,'').replace(/\s+/g,' ').trim();
+function pv(){const a=clean($('#f1').value),b=clean($('#f2').value),s=clean($('#f3').value);$('#p1').textContent=a?a.toUpperCase()+'.':'WORD 01.';$('#p2').textContent=b?b.toUpperCase()+'.':'WORD 02.';$('#p3').textContent=s||'YOUR SITUATION APPEARS HERE.'}
+['f1','f2','f3'].forEach(i=>$('#'+i).oninput=pv);
+const load=()=>{try{return JSON.parse(localStorage.getItem('cv2')||'[]')}catch(e){return[]}};
+let lastSub=0;
+$('#fm').onsubmit=e=>{e.preventDefault();const er=$('#er'),v=['f1','f2','f3'].map(i=>clean($('#'+i).value));er.textContent='';
+ if($('#hp').value)return;
+ if(Date.now()-lastSub<15000)return er.textContent='Please wait a few seconds before adding another.';
+ if(v[0].length<2||v[1].length<2)return er.textContent='Each word needs at least 2 characters.';
+ if(v[2].length<15)return er.textContent='Describe the situation in at least 15 characters.';
+ if(/https?:|www\./i.test(v.join(' ')))return er.textContent='Links are not allowed.';
+ lastSub=Date.now();const a=load();a.push({a:v[0],b:v[1],s:v[2]});try{localStorage.setItem('cv2',JSON.stringify(a.slice(-30)))}catch(x){}
+ er.textContent='YOUR WORD HAS BEEN SUBMITTED. THE CONVERSATION CONTINUES.';$('#fm').reset();buildCom()};
+/* community */
+const SA=[["PUSHY","DRIVEN","Someone chases an overdue reply for the third time."],["EMOTIONAL","INVESTED","A colleague speaks firmly about a failing launch."],["NITPICKY","THOROUGH","Someone catches a typo in a contract."],["MOODY","DIRECT","A teammate says a plan won’t work."],["ABRASIVE","CANDID","Feedback is given without softening."],["BRAGGING","OWNING","Someone lists their wins in a review."]];
+function buildCom(){const g=$('#cg');g.replaceChildren();
+ [...SA.map(x=>({a:x[0],b:x[1],s:x[2],m:0})),...load().map(x=>({...x,m:1}))].forEach(x=>{const b=mk('div','tile'),w=mk('span','w',x.a);b.tabIndex=0;b.setAttribute('role','button');b.dataset.t=x.a+'|'+x.b;b.append(mk('small','',x.m?'YOURS · PENDING':'SAMPLE'),w);
+  b.setAttribute('aria-label',x.a+' or '+x.b+'. '+(x.m?'Your pending entry.':'Sample entry.'));
+  b.onpointerenter=b.onfocus=()=>w.textContent=x.b;b.onpointerleave=b.onblur=()=>w.textContent=x.a;
+  b.onclick=()=>{w.textContent=x.a;const d=mk('div','dt');const k=mk('p','k',x.m?'YOUR ENTRY — PENDING MODERATION, ONLY VISIBLE TO YOU':'SAMPLE ENTRY — NOT A REAL SUBMISSION');k.style.color='#E60000';d.append(mk('p','k','THE SITUATION'),mk('p','',x.s));d.style.marginTop='30px';openP([k,mk('h2','big',x.a),mk('h2','big r',x.b),d])};g.append(b)});fitTiles()}
+buildCom();
+/* one-line fitting */
+function fitEl(el,max){let f=max;el.style.whiteSpace='nowrap';el.style.fontSize=f+'px';while(el.scrollWidth>el.clientWidth+1&&f>12){f-=2;el.style.fontSize=f+'px'}}
+function fitH(r){r.querySelectorAll('h3,.big').forEach(h=>fitEl(h,h.classList.contains('big')?Math.min(r.clientWidth*.2,150):Math.min(r.clientWidth*.14,72)))}
+function fitTiles(){$$('.tile').forEach(t=>{const w=t.querySelector('.w'),q=t.dataset.t.split('|'),keep=w.textContent;let f=Math.min(t.clientWidth*.13,80);w.style.whiteSpace='nowrap';w.textContent=q[0].length>q[1].length?q[0]:q[1];w.style.fontSize=f+'px';while(w.scrollWidth>w.clientWidth+1&&f>10){f-=1;w.style.fontSize=f+'px'}w.textContent=keep})}
+addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches&&e.target.matches('.tile,.rr,.fg.sp')){e.preventDefault();e.target.click()}});
+/* labels disappear, new word appears */
+P.slice(0,5).forEach(p=>{const r=mk('div','rr');r.tabIndex=0;r.setAttribute('role','button');r.setAttribute('aria-label',p[1]+'. Reveal '+p[0]);r.append(mk('span','rl',p[1]+'.'),mk('span','rt',p[0]+'.'));r.onpointerenter=e=>{if(e.pointerType==='mouse')r.classList.add('on')};r.onclick=e=>{if(e.detail===0||matchMedia('(hover:none)').matches)r.classList.toggle('on')};$('#rw').append(r)});
+/* dots */
+const dcv=$('#dc'),dx=dcv.getContext('2d'),DC=22,DR=9,DRI=4*DC+14,dpr=Math.min(devicePixelRatio||1,2);let dW=0,ds=0,dpx=-999,dpy=-999,dbig=0;
+function dsize(){dW=dcv.clientWidth;dcv.width=dW*dpr;dcv.height=dW*DR/DC*dpr;ds=dW/DC;ddraw()}
+function ddraw(){if(!dW)return;dx.setTransform(dpr,0,0,dpr,0,0);dx.clearRect(0,0,dW,dW*DR/DC);for(let j=0;j<DR;j++)for(let i=0;i<DC;i++){let cx=(i+.5)*ds,cy=(j+.5)*ds,ex=cx-dpx,ey=cy-dpy,d=Math.hypot(ex,ey),k=Math.max(0,1-d/(ds*3.2)),r=ds*.17*(1+k*.9);const red=j*DC+i===DRI;if(d>0){cx+=ex/d*k*k*ds*1.1;cy+=ey/d*k*k*ds*1.1}if(red)r=ds*.17+dbig*ds*.4;dx.fillStyle=red?'#E60000':'#000';dx.beginPath();dx.arc(cx,cy,r,0,7);dx.fill()}}
+function dreveal(){$('#dm').textContent='ONE WORD CAN CHANGE HOW WE SEE SOMEONE.';if(RM){dbig=1;return ddraw()}let t=0;const f=()=>{t+=.05;dbig=Math.min(1,t);ddraw();if(t<1)requestAnimationFrame(f)};f()}
+const dpos=e=>{const r=dcv.getBoundingClientRect();return[e.clientX-r.left,e.clientY-r.top]};
+dcv.onpointermove=e=>{[dpx,dpy]=dpos(e);const h=Math.hypot(dpx-(DRI%DC+.5)*ds,dpy-(Math.floor(DRI/DC)+.5)*ds)<ds*.7;dcv.style.cursor=h?'pointer':'';ddraw()};
+dcv.onpointerleave=()=>{dpx=dpy=-999;ddraw()};
+dcv.onclick=e=>{const[x,y]=dpos(e);if(Math.hypot(x-(DRI%DC+.5)*ds,y-(Math.floor(DRI/DC)+.5)*ds)<ds*.7)dreveal()};
+$('#lc').onclick=dreveal;
+/* people */
+const sp=$('#sp'),pcap=$('#pcap');sp.onclick=()=>{const e=sp.classList.toggle('eq');pcap.textContent=e?'THE LABEL IS GONE. NOTHING ELSE CHANGED.':'CLICK THE RED ONE.';sp.setAttribute('aria-label',e?'Put the label back':'Remove the label Bossy')};
+const refit=()=>{fitH($('#dt'));fitH($('#pc'));fitTiles();dsize()};
+document.fonts.ready.then(refit);addEventListener('resize',refit);refit();
+</script></body></html>
